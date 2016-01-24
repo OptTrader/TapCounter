@@ -27,14 +27,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaO-8R-jJz">
-                                <rect key="frame" x="285" y="398" width="30" height="30"/>
+                                <rect key="frame" x="253" y="398" width="94" height="30"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FRf-AH-hvw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Tap"/>
+                                <state key="normal" title="Tap or Hold"/>
                                 <connections>
                                     <action selector="tapButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3Y-XJ-pm2"/>
+                                    <outletCollection property="gestureRecognizers" destination="o4g-5o-9Ch" appends="YES" id="c2K-bf-u5r"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,6 +60,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="o4g-5o-9Ch">
+                    <connections>
+                        <action selector="longPressed:" destination="BYZ-38-t0r" id="dkj-Yf-bSh"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="918" y="997"/>
         </scene>

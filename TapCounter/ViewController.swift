@@ -50,6 +50,12 @@ class ViewController: UIViewController
     counterLabel.text = "\(count)"
   }
   
+  @IBAction func longPressed(sender: UILongPressGestureRecognizer)
+  {
+    count++
+    counterLabel.text = "\(count)"
+  }
+  
   @IBAction func resetButtonPressed(sender: UIBarButtonItem)
   {
     count = 0
