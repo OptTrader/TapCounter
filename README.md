@@ -1,1 +1,1 @@
-100 Days of Swift - Project 1 Tap Counter
+100 Days of Swift - Project 2 Tap or Hold Counter
