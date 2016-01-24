@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xah-j1-FyD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Counter-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TapCounter" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,11 +16,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqW-mQ-chZ">
+                                <rect key="frame" x="286" y="270" width="28" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="ZXr-Kn-pXJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaO-8R-jJz">
+                                <rect key="frame" x="285" y="398" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FRf-AH-hvw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Tap"/>
+                                <connections>
+                                    <action selector="tapButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3Y-XJ-pm2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UaO-8R-jJz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3a8-mg-IY7"/>
+                            <constraint firstItem="UaO-8R-jJz" firstAttribute="top" secondItem="mqW-mQ-chZ" secondAttribute="bottom" constant="69" id="8jA-mj-HUQ"/>
+                            <constraint firstItem="mqW-mQ-chZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LW3-Tl-T3b"/>
+                            <constraint firstItem="mqW-mQ-chZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hPj-OO-Kta"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Counter" id="8wz-el-0HU">
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="fLr-of-4mW">
+                            <connections>
+                                <action selector="resetButtonPressed:" destination="BYZ-38-t0r" id="UW4-vi-3CX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="counterLabel" destination="mqW-mQ-chZ" id="R6j-I4-pjD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="918" y="997"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jGM-H8-qjv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xah-j1-FyD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kMw-AG-lqN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0Qn-tZ-3dk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gc7-zf-jnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="264" y="997"/>
         </scene>
     </scenes>
 </document>
